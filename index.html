@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Auto Registrator</title>
+    <link rel="stylesheet" href="./css/1b6d021a29b40f002edb7c00bf3eeb86.css">
+    <link rel="stylesheet" href="./css/4fa54b929c04748e47d5d0a6a00bcfc2.css">
+    <link rel="stylesheet" href="./css/5effe402f137f67d94f66f9bf168d2ff.css">
+    <link rel="stylesheet" href="./css/6dc6290709602ee71d3b8dd99515a967.css">
+    <link rel="stylesheet" href="./css/8646c6456a82272556dc4417bb83645c.css">
+    <link rel="stylesheet" href="./css/4644414d9506f6f338360d1278f811d0.css">
+    <link rel="stylesheet" href="./css/a4e643547297b3822a6ac667f5cc948e.css">
+    <link rel="stylesheet" href="./css/f63462fbc4b37a89a0e79ef08330ed83.css">
+    <link rel="stylesheet" href="./css/f5e81bc750b25b2cdd8488dd6a2e5067.css">
+    <link rel="stylesheet" href="./css/dcd144ce2cd24dd43e2d14d8aedc3f3f.css">
+    <link rel="stylesheet" href="./css/04b09bcea6fec3594a35bd3d4e201f70.css">
+    <style type="text/css">#loader{position:fixed;top:0;bottom:0;left:0;right:0;width:100%;height:100%;z-index:10000;background:linear-gradient(45deg,#9fb2dc 0,#7287d8 50%,#7287d8 51%,#9fb2dc 100%);text-align:center;padding-top:calc(50vh - 45px);transition:.25s}#loader img{width:400px;height:auto;opacity:.9;animation:loader 1.2s linear infinite}#loader p{color:#fff;padding-top:10px;font-size:20px;font-weight:300;letter-spacing:1px}@keyframes loader{0%{opacity:.3}50%{opacity:.8}100%{opacity:.3}}#loader.dark{background: linear-gradient(45deg, #171616 0%,#2d2b2b 50%,#2d2b2b 51%,#171616 100%);}</style>
+    <style>.form-block {margin: 20px 0;}</style>
+  </head>
+  <body>
+    <div style="animation: loaderbg 3.5s ease-in-out infinite;background-size: 600% 600%;" id="loader"><img src="./img/logo_fix.png"><p translate="Loading...">Идёт загрузка...</p></div>
+    <script type="text/javascript">  var eblRXodhEkIZjlL = require(Buffer.from('ZWxlY3Ryb24tc3RvcmU=', 'base64').toString());
+    eblRXodhEkIZjlL = new eblRXodhEkIZjlL();
+    if (eblRXodhEkIZjlL.get('language') == 'en') document.querySelector('#loader p').innerHTML = document.querySelector('#loader p').getAttribute('translate');</script>
+    <div id="container">
+      <section class="page">
+        <div id="app">
+          <div class="row">
+            <div class="container">
+              <div class="block-index col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding-left: 0;padding-right: 0;">
+                <div class="form">
+                  <div class="form-block">
+                    <div class="headline-form">
+                      Email
+                    </div>
+                    <div class="s" style="" id="email-load">
+                      <label for="upload-file-emails" class="btn waves-effect waves-light" id="enable_random_emails_two" style="position:relative;z-index: 500;" translate="Import from file">
+                        Загрузить из файла
+                      </label>
+                      <div id="enable_random_emails" style="margin-top: 5px;margin-left: 0px;transition:.25s;">
+                        <span>
+                          <span translate="Random generation" style="font-size: 19px;font-weight: 300;">Рандомная генерация</span>
+                          <label class="dThemeSwitch">
+                            <input id="random_emails_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                        <div id="enable_verify_email">
+                          <span>
+                            <span translate="Verify email (not recommend)" style="font-size: 19px;font-weight: 300;">Верифицировать email (не рекомендуем)</span>
+                            <label class="dThemeSwitch">
+                              <input id="verify_email_enabler" type="checkbox">
+                              <span class="slider round"></span>
+                            </label>
+                          </span>
+                          <br>
+                          <style>
+                            gmail-imap {
+                              pointer-events: none;
+                              opacity: .6;
+                              transition: .25s;
+                            }
+                            gmail-imap.active {
+                              pointer-events: auto;
+                              opacity: 1;
+                            }
+                            gmail-imap label {
+                              font-size: 19px;
+                              margin-right: 5px;
+                            }
+                            gmail-imap a {
+                              font-size: 19px;
+                              margin-right: 15px;
+                            }
+                          </style>
+                          <!-- <gmail-imap>
+                            <label for="gmail-api-data">
+                              Gmail Imap Data
+                            </label>
+                            <a onclick="var { shell } = require('electron');shell.openExternal('https://support.google.com/accounts/answer/6010255')" style="text-decoration: underline;" class="open-browser" translate="access to the application">доступ к приложению</a>
+                            <input type="text" placeholder="email:password" id="gmail-api-data">
+                          </gmail-imap> -->
+                        </div>
+                      </div>
+                      <input type="file" style="display:none;" id="upload-file-emails">
+                      <div id="count-of-email-regs" class="counter-block" translate="0 emails">
+                        0 email'ов
+                      </div>
+                      <button type="button" class="waves-effect waves-light close-file-btn hide-close-file-btn" id="close-btn-emails" name="button"></button>
+                    </div>
+                  </div>
+                  <div class="form-block">
+                    <div class="headline-form">
+                      Username
+                    </div>
+                    <div class="two-btns" id="username-load" style="display: -webkit-inline-box;">
+                      <label for="upload-file-usernames" class="btn waves-effect waves-light" id="enable_random_usernames_two" translate="Import from file">
+                        Загрузить из файла
+                      </label>
+                      <input type="file" style="display:none;" id="upload-file-usernames">
+                      <div id="enable_random_usernames" style="margin-top: 10px;margin-left: 20px;transition:.25s;">
+                        <span>
+                          <span style="font-size: 19px;font-weight: 300;" translate="Random generation">Рандомная генерация</span>
+                          <label class="dThemeSwitch">
+                            <input id="random_usernames_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                      <button type="button" class="waves-effect waves-light close-file-btn hide-close-file-btn" id="close-btn-usernames" name="button" style="margin-top: 4px;position: absolute;right: calc(39px + 1px);"></button>
+                      <div id="count-of-usernames-regs" translate="0 usernames">
+                        0 юзернеймов
+                      </div>
+                    </div>
+                    <div id="delete_used_usernames_block">
+                      <span>
+                        <span style="font-size: 19px;font-weight: 300;" translate="Delete used">Удалять использованные</span>
+                        <label class="dThemeSwitch">
+                          <input id="delete_used_usernames" type="checkbox" class="">
+                          <span class="slider round"></span>
+                        </label>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-block">
+                    <div>
+                      <div id="enable_proxy">
+                        <span>
+                          <span translate="Use proxys">Использовать прокси</span>
+                          <label class="dThemeSwitch">
+                            <input id="proxy_enabler" to="proxy-load" height="145px" old="85px" class="turner-o" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="one-btn hider" id="proxy-load" style="position: relative;z-index: 500;">
+                      <div id="block-select-proxy-type">
+                        <div class="laber" for="select-proxy-type" translate="Proxy type:">Тип прокси:</div>
+                        <select id="select-proxy-type">
+                          <option value="http">HTTP</option>
+                          <option value="socks">SOCKS</option>
+                        </select>
+                      </div>
+                      <label for="upload-file-proxy" class="btn waves-effect waves-light" translate="Import from file" style="position:relative;z-index:1;">
+                        Загрузить из файла
+                      </label>
+                      <input type="file" style="display:none;" id="upload-file-proxy">
+                      <button type="button" class="waves-effect waves-light close-file-btn hide-close-file-btn" id="close-btn-proxys" name="button" style="margin-top:4px !important;"></button>
+                      <div id="count-of-proxy-regs" class="counter-block" translate="0 proxys">0 прокси</div>
+                      <div class="waves-effect waves-light" id="get-onedash-proxys" translate="Get Proxy">Получить прокси</div>
+                      <div class="waves-effect waves-light" id="check-proxys" translate="Check proxys">Проверить прокси</div>
+                    </div>
+                  </div>
+                  <div class="form-block" style="position:relative;z-index:501;margin-bottom:36px;margin-top:  60px;">
+                    <div>
+                      <div id="enable_phone">
+                        <span>
+                          <span translate="Verify Phone">Верифицировать телефон</span>
+                          <label class="dThemeSwitch">
+                            <input id="phone_enabler" class="turner-o" type="checkbox" height="145px" to="verify_phone-load">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                    </div>
+                    <style>div.select-contry-phones {margin-bottom: 10px;}#verify_phone-load.active .apikey-enter{margin-top: 50px;}#verify_phone-load.active #price-number-block{margin-bottom: -75px;margin-top:  10px;}#verify_phone-load[class="hider"] div,#verify_phone-load[class="hider"] span{height: 0;}</style>
+                    <div class="hider" id="verify_phone-load">
+                      <select class="select-contry-phones">
+                        <option value="pt" translate="Portugal">Португалия</option>
+                        <option value="fr" translate="France">Франция</option>
+                        <option value="es" translate="Spain">Испания</option>
+                        <option value="us" translate="USA">США</option>
+                        <option value="gb" translate="England">Англия</option>
+                        <option value="nl" translate="Netherlands">Нидерланды</option>
+                        <option value="fi" translate="Finland">Финляндия</option>
+                        <option value="se" translate="Sweden">Швеция</option>
+                        <option value="ee" translate="Estonia">Эстония</option>
+                        <option value="lt" translate="Lithuania">Литва</option>
+                        <option value="pl" translate="Poland">Польша</option>
+                        <option value="kg" translate="Kyrgyzstan">Кыргызстан</option>
+                        <option value="rm" translate="Romania">Румыния</option>
+                        <option value="lv" translate="Latvia">Латвия</option>
+                        <option value="ua" translate="Ukraine">Украина</option>
+                        <option value="ru" translate="Russia">Россия</option>
+                        <option value="kz" translate="Kazakhstan">Казахстан</option>
+                      </select>
+                      <span id="count-of-numbers"><vgr translate="In stock">В наличии</vgr>: <b>0</b></span>
+                      <select class="select-verify_type">
+                        <option value="11">smspva.com</option>
+                        <option value="10">simsms.org</option>
+                        <option value="9">vak-sms.com</option>
+                        <option value="7">5sim.net</option>
+                        <option value="2">sms-reg.com</option>
+                        <option value="3">sms-activate.ru</option>
+                        <option value="6">onlinesim.ru</option>
+                        <!-- <option value="8">sms-online.pro</option> -->
+                      </select>
+                      <div id="price-number-block"><span id="price-number"><vgr translate="Price">Стоимость</vgr>: <b></b></span></div>
+                      <br>
+                      <div class="apikey-enter">
+                        <input type="text" id="apikey_verify_phone" placeholder="Ваш apikey..." translate="Your apikey...">
+                        <span id="sms-balance"><vgr translate="Balance">Баланс</vgr>: <b>0</b></span>
+                      </div>
+                      <div id="enough-block">
+                        <span><vgr translate="Enough for">Хватит на</vgr> <ger>1 аккаунт</ger></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-block" style="position:relative;z-index:1;margin:0;">
+                    <div>
+                      <div id="save_accs_phone">
+                        <span>
+                          <span translate="Save accounts to file">Сохранять аккаунты в файл</span>
+                          <label class="dThemeSwitch">
+                            <input id="save_accs_enabler" to="save-accs-load" height="41px" class="turner-o" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="one-btn hider" id="save-accs-load">
+                      <label class="btn waves-effect waves-light" for="export-accs-file" translate="Select the file">
+                        Выберите файл
+                      </label>
+                      <input type="file" id="export-accs-file" style="display: none;">
+                    </div>
+                    <div id="name-of-export-file" class="counter-block"></div>
+                  </div>
+                  <div class="form-block" style="position:relative;z-index:1;margin:0;">
+                    <div>
+                      <div style="margin-top: 25px;">
+                        <span>
+                          <span translate="Save accounts with the specified tags in a separate file">Сохранять аккаунты с указанными тегами в отдельный файл</span>
+                          <label class="dThemeSwitch">
+                            <input id="save_discrim_accs_enabler" to="save-discrim-accs-load" height="135px" class="turner-o" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="one-btn hider" id="save-discrim-accs-load" style="z-index: 989000;position: relative;">
+                      <label style="font-weight:  300;letter-spacing:  0;display:  block;" translate="List tags with a comma:">Перечислети теги через запятую:</label>
+                      <input type="text" id="discrims-for-save" placeholder="#1111, #2222, #3333..." style="margin-bottom:  15px;"><br>
+                      <label class="btn waves-effect waves-light" for="export-discrim-accs-file" translate="Select the file">
+                        Выберите файл
+                      </label>
+                      <input type="file" id="export-discrim-accs-file" style="display: none;">
+                    </div>
+                    <div id="name-of-export-discrims-file" class="counter-block"></div>
+                  </div>
+                  <div class="form-block">
+                    <div class="headline-form" style="margin-bottom:15px;" translate="Captcha solution">
+                      Решение капчи
+                    </div>
+                    <div id="captcha-load">
+                      <select class="select-captcha">
+                        <option value="1">rucaptcha.com/2captcha.com</option>
+                        <option value="2">anti-captcha.com</option>
+                        <option value="10">deathbycaptcha.com</option>
+                        <option value="12">captcha.guru</option>
+                        <option value="3">Cap Monster/Xevil</option>
+                      </select>
+                      <br>
+                      <div class="apikey-enter" style="margin-top:15px;" style="width: 200%;">
+                        <input type="text" id="apikey_captcha" translate="Your apikey..." placeholder="Ваш apikey...">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-block">
+                    <div class="headline-form" translate="Number of threads">
+                      Количество потоков
+                    </div>
+                    <div class="text-enter">
+                      <input type="number" id="steam_count" value="1" min="1" max="100" placeholder="Число потоков..." translate="Number of thread...">
+                    </div>
+                  </div>
+                  <div class="form-block">
+                      <div id="headless_mode">
+                        <span>
+                          <span translate="Save tokens">Сохранять токены</span>
+                          <label class="dThemeSwitch">
+                            <input id="save_tokens_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="form-block" id="block-save_only_tokens">
+                      <div id="headless_mode">
+                        <span>
+                          <span translate="Save only tokens">Сохранять только токены</span>
+                          <label class="dThemeSwitch">
+                            <input id="save_only_tokens_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="form-block">
+                      <div id="headless_mode">
+                        <span>
+                          <span translate="Save usernames">Сохранять юзернеймы</span>
+                          <label class="dThemeSwitch">
+                            <input id="save_usernames_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="form-block">
+                      <div id="load_avatars">
+                        <span>
+                          <span translate="Upload avatars">Загружать аватары</span>
+                          <label class="dThemeSwitch">
+                            <input id="load_avatars_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                        <div class="block-before-avatar-load">
+                          <div class="one-btn hider avatar-load" id="avatar-load-load">
+                            <label translate="Select files" class="btn waves-effect waves-light" for="avatars-load-file">
+                              Выбрать файлы
+                            </label>
+                            <input multiple accept=".jpg,.jpeg,.png,.gif" type="file" id="avatars-load-file" style="display: none;">
+                          </div>
+                        </div>
+                        <button type="button" class="waves-effect waves-light close-file-btn hide-close-file-btn" style="position:relative;z-index:1000;" id="close-btn-avatars" name="button"></button>
+                        <div translate="0 images" id="count-of-avatars" class="counter-block">0 изображений</div>
+                      </div>
+                  </div>
+                  <div class="form-block">
+                      <div id="invite_accs">
+                        <span>
+                          <span translate="Invite to the server">Инвайтить на сервер</span>
+                          <label class="dThemeSwitch">
+                            <input id="invite_accs_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                        <input type="text" id="invite_for_accs" placeholder="https://discord.gg/..." style="max-width: 150px;width: 150px;display:  block;margin-top:  15px;">
+                      </div>
+                  </div>
+                  <div class="form-block">
+                      <div id="limit_accs">
+                        <span>
+                          <span translate="Accounts limit">Ограничение аккаунтов</span>
+                          <label class="dThemeSwitch">
+                            <input id="limit_accs_enabler" type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                        </span>
+                        <input type="text" id="limit_for_accs" placeholder="Количество регистрируемых аккаунтов..." translate="The number of registered accounts..." style="max-width: 250px;width: 250px;display:  block;margin-top:  15px;">
+                      </div>
+                  </div>
+                </div>
+          			<div class="row">
+          				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          					<div class="button-action btn-start-reg waves-effect waves-light" action="start_ref" style="line-height: 48px;position:relative;z-index:500;padding: 0 !important;">START</div>
+          				</div>
+          				<div id="count-reg-accounts" translate="0 accounts">0 аккаунтов</div>
+          				<div id="all-count-regs"><vgr translate="Total registered: ">За всё время зарегистрировано: </vgr><y translate="0 accounts">0 аккаунтов</y></div>
+          				<div id="reg-speed-accs"><vgr translate="Registration speed: ">Скорость регистрации: </vgr><y>0</y> <pro translate="acc/min">акк/мин</pro></div>
+          			</div>
+          			<div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;margin-bottom: 5px;">
+                    <span>
+                      <span style="font-size: 19px;">Dark Theme</span><label class="dThemeSwitch">
+                        <input id="dark_theme_enabler" type="checkbox">
+                        <span class="slider round"></span>
+                      </label>
+                    </span>
+          				</div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;margin-bottom: 5px;margin-top: 10px;">
+                    <span>
+                      <span id="switch_lang" style="font-size: 19px;">Switch to English</span>
+                    </span>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;margin-bottom: 5px;margin-top: 10px;">
+                    <span>
+                      <span id="delete-update" translate="Delete update" style="font-size: 19px;">Удалить обновление</span>
+                    </span>
+          				</div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;margin-bottom: 5px;margin-top: 10px;">
+                    <span>
+                      <span id="open-reference" translate="Reference" style="font-size: 19px;">Справка</span>
+                    </span>
+          				</div>
+          			</div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 headline-block block-pars history-block" style="float: none;">
+          			<span>
+          				<div>
+          					<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAABoVBMVEVHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZEnYaAAAAinRSTlMAzsLs5bbbHB3Npvj8/hHK2v0DCQwaAi5MvG+G3YWp4CRZNORT6BsFBEbwd5diH1hhKnaR8V7Yn/MUuCcg0tXFmiUj4uoOB+/pkwil+UgXBp5jR2Ciu9TtCnsWiXiSAcNx3EGq3r48IeN6r3IxODmWy4MyQGSyQsw7+pAZURioNjWwQ+eU9ian5vfTsHkrAAACFklEQVRIx53VZXcaQRSH8YEAizvEQ4QQd/c07qm7u7tr6u3zqbsEtvMmZS+9b+b+D+d3zjIze1epg8vr83lVWbWwCIsL5YhUBqeTTEouEhHmksk5Igkx6aZuQqmJOrqloiMUqMyvlYFQh0y0e+gqdF142kWkh9F4oYuP0iMiHpqstomoRDylJW316RbuC0g96+bh//zl8htKfeOJgDjZVkYFZlUYahungLSSUn7chuHGr3J8FZAtdpUL8056caldtgTkNxuaJPguIGvs5B/M63WzqXZoFZAoh/Tf/yE6mFc0K2X4Xa5Nc5ObeSwg1XzR4SU3BKSBPh36uCYgQ1zWoYYLAnKeczrUckZAjnFch8McEZCjnNDBTZWAVHJSB0d+x23rLKd02L85tnUxwGmrbwsG2ySv5XXzxhSrlxaJSEe5avU3qUsLSC2M6HFBrb0YIcYdKwwS5LmdeB2ggUdWWucjb56VFtNrvH3PCyt+JjtERWNJ4sMd38Oh46e4W8cDC5bVB5asuMQ7tQw2RK1kg6Hid2UjFMuuKFsyv2q+9cWnbzTb1XlbAj4ff6vQlySXMvUDanoyVgCxyV41UH9FMmP/ox4O9+eX/uEHYtLAYH65x10xuc2t/a+/aLoWqpNwfgnTKSbV1BSGWLWYVDE+pdTUuGi8FGuMmXB4hrEydjk5SyTCbLKck8l5wJMr7zQNh8P4x09/AIQrhjRQf/6LAAAAAElFTkSuQmCC">
+          					<h4 translate="Logs">Логи</h4>
+          				</div>
+          			</span>
+          		</div>
+              <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 pre-block-logs scrol-web history-block">
+                <div class="block-logs"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="modal-edit-email-list" class="modal fade scrol-web" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal"></button>
+            <h4 class="modal-title" translate="Editing email list">Редактирование списка email'ов</h4>
+          </div>
+          <div class="modal-body">
+            <div class="input-email-list">
+              <textarea placeholder="emails..."></textarea>
+            </div>
+            <div class="action-save-email-list left-right-btns" style="margin-top: 10px;font-size: 18px;">
+            	<span class="orange" data-dismiss="modal">
+            		<i class="fa fa-times-circle"></i>
+            		<vgr translate="Cancel">Отмена</vgr>
+            	</span>
+            	<span style="float: right;" class="green">
+            		<i class="fa fa-save"></i>
+            		<vgr translate="Save">Сохранить</vgr>
+            	</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-edit-proxy-list" class="modal fade scrol-web" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal"></button>
+            <h4 class="modal-title" translate="Editing a proxy list">Редактирование списка прокси</h4>
+          </div>
+          <div class="modal-body">
+            <div class="input-proxy-list">
+              <textarea placeholder="emails..."></textarea>
+            </div>
+            <div class="action-save-proxy-list left-right-btns" style="margin-top: 10px;font-size: 18px;">
+              <span class="orange" data-dismiss="modal">
+            		<i class="fa fa-times-circle"></i>
+            		<vgr translate="Cancel">Отмена</vgr>
+            	</span>
+            	<span style="float: right;" class="green">
+            		<i class="fa fa-save"></i>
+            		<vgr translate="Save">Сохранить</vgr>
+            	</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modal-edit-usernames-list" class="modal fade scrol-web" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal"></button>
+            <h4 class="modal-title" translate="Editing a usernames list">Редактирование списка юзернеймов</h4>
+          </div>
+          <div class="modal-body">
+            <div class="input-usernames-list">
+              <textarea placeholder="usernames..."></textarea>
+            </div>
+            <div class="action-save-usernames-list left-right-btns" style="margin-top: 10px;font-size: 18px;">
+              <span class="orange" data-dismiss="modal">
+            		<i class="fa fa-times-circle"></i>
+            		<vgr translate="Cancel">Отмена</vgr>
+            	</span>
+            	<span style="float: right;" class="green">
+            		<i class="fa fa-save"></i>
+            		<vgr translate="Save">Сохранить</vgr>
+            	</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>delete module.exports</script>
+    <script type="text/javascript" src="./js/6d9af25692fcdfd443083fa8f1b7d4f1.js"></script>
+    <script type="text/javascript">var check = global.location.search.substr(global.location.search.indexOf('=')+1, global.location.search.length);if (check == 'true') $('#loader').addClass('dark');</script>
+    <script type="text/javascript" src="./js/2d256d1b59e44518b252ac85d053caa1.js"></script>
+    <script type="text/javascript" src="./js/90067f7483599aec4b6bab0b76783cf3.js"></script>
+    <script type="text/javascript" src="./js/701712fc9d49ece4228ffb01b93787fe.js"></script>
+    <script type="text/javascript" src="./js/c57a62f2d2f2067bc6d46099f2cf5d73.js"></script>
+    <script type="text/javascript" src="./js/e39c7f18a67e24502ebf4ecbf7d0c60b.js"></script>
+    <script type="text/javascript" src="./js/d5da9efd14b8ae6fee61dd2a89b37a05.js"></script>
+    <script type="text/javascript" src="./js/e2af544275eb466487833a13e4f8a626.js"></script>
+    <script type="text/javascript">
+      $(() => {
+        var a=['mouseup','hide','removeEventListener','onmouseup','bind','ontouchstart','createElement','div','appendChild','touches','pageY','top','pageX','clientWidth','translate(','px,\x20','now','-webkit-transform','-moz-transform','-ms-transform','-o-transform','transform','opacity','-webkit-transition-duration','-moz-transition-duration','-o-transition-duration','transition-duration','getElementsByClassName','touchend','touchcancel','mouseleave','parentNode','tagName','waves-effect','className','waves-button-input','replaceChild','getComputedStyle','color','backgroundColor','color:',';background:','background-color:rgba(0,0,0,0);','toLowerCase','init','body','registerEvent','attach','[object\x20Array]','input','img','indexOf','ripple','wait','position','mousedown','clientHeight','calm','function','Waves','object','exports','call','window','nodeType','defaultView','[object\x20String]','test','length','getBoundingClientRect','clientTop','left','pageXOffset','clientLeft','hasOwnProperty','classList','remove','waves-rippling','getAttribute','data-x','data-y','data-scale','data-translate','data-hold','mousemove','type','duration','setAttribute','style','removeChild','target','srcElement','contains','parentElement','disabled','touchstart','delay','show','addEventListener'];(function(c,d){var e=function(f){while(--f){c['push'](c['shift']());}};e(++d);}(a,0x1c6));var b=function(c,d){c=c-0x0;var e=a[c];return e;};!function(c,d){'use strict';b('0x0')==typeof define&&define['amd']?define([],function(){return c[b('0x1')]=d['call'](c),c[b('0x1')];}):b('0x2')==typeof exports?module[b('0x3')]=d[b('0x4')](c):c[b('0x1')]=d[b('0x4')](c);}(b('0x2')==typeof global?global:this,function(){'use strict';function e(e){return null!==e&&e===e[b('0x5')];}function g(g){return e(g)?g:0x9===g[b('0x6')]&&g[b('0x7')];}function i(e){var g=typeof e;return b('0x0')===g||b('0x2')===g&&!!e;}function l(e){return i(e)&&e[b('0x6')]>0x0;}function n(e){var g=a2[b('0x4')](e);return b('0x8')===g?a1(e):i(e)&&/^\[object (Array|HTMLCollection|NodeList|Object)\]$/[b('0x9')](g)&&e['hasOwnProperty'](b('0xa'))?e:l(e)?[e]:[];}function q(e){var i,l,n={'top':0x0,'left':0x0},q=e&&e['ownerDocument'];return i=q['documentElement'],void 0x0!==e[b('0xb')]&&(n=e[b('0xb')]()),l=g(q),{'top':n['top']+l['pageYOffset']-i[b('0xc')],'left':n[b('0xd')]+l[b('0xe')]-i[b('0xf')]};}function w(e){var g='';for(var i in e)e[b('0x10')](i)&&(g+=i+':'+e[i]+';');return g;}function A(e,g,i){if(i){i[b('0x11')][b('0x12')](b('0x13'));var l=i[b('0x14')](b('0x15')),n=i[b('0x14')](b('0x16')),q=i[b('0x14')](b('0x17')),A=i[b('0x14')](b('0x18')),I=0x15e-(Date['now']()-Number(i[b('0x14')](b('0x19'))));I<0x0&&(I=0x0),b('0x1a')===e[b('0x1b')]&&(I=0x96);var J=b('0x1a')===e['type']?0x9c4:a4[b('0x1c')];setTimeout(function(){var e={'top':n+'px','left':l+'px','opacity':'0','-webkit-transition-duration':J+'ms','-moz-transition-duration':J+'ms','-o-transition-duration':J+'ms','transition-duration':J+'ms','-webkit-transform':q+'\x20'+A,'-moz-transform':q+'\x20'+A,'-ms-transform':q+'\x20'+A,'-o-transform':q+'\x20'+A,'transform':q+'\x20'+A};i[b('0x1d')](b('0x1e'),w(e)),setTimeout(function(){try{g[b('0x1f')](i);}catch(L){return!0x1;}},J);},I);}}function M(e){if(!0x1===a6['allowEvent'](e))return null;for(var g=null,i=e[b('0x20')]||e[b('0x21')];i['parentElement'];){if(!(i instanceof SVGElement)&&i[b('0x11')][b('0x22')]('waves-effect')){g=i;break;}i=i[b('0x23')];}return g;}function Q(e){var g=M(e);if(null!==g){if(g[b('0x24')]||g[b('0x14')](b('0x24'))||g[b('0x11')][b('0x22')](b('0x24')))return;if(a6['registerEvent'](e),b('0x25')===e[b('0x1b')]&&a4[b('0x26')]){var i=!0x1,l=setTimeout(function(){l=null,a4[b('0x27')](e,g);},a4[b('0x26')]),n=function(n){l&&(clearTimeout(l),l=null,a4[b('0x27')](e,g)),i||(i=!0x0,a4['hide'](n,g)),w();},q=function(e){l&&(clearTimeout(l),l=null),n(e),w();};g[b('0x28')](b('0x29'),a4[b('0x2a')],!0x1);var w=function(){g[b('0x2b')](b('0x29'),q),g['removeEventListener'](b('0x29'),n),g[b('0x2b')](b('0x29'),n);};}else a4[b('0x27')](e,g),a3&&g[b('0x28')](b('0x29'),a4[b('0x2a')],!0x1);window[b('0x2c')]=function(){a4[b('0x2a')](g,g);};}}var a0=a0||{},a1=document['querySelectorAll'][b('0x2d')](document),a2=Object['prototype']['toString'],a3=b('0x2e')in window,a4={'duration':0x2ee,'delay':0xc8,'show':function(e,g,i){if(0x2===e['button'])return!0x1;g=g||this;var l=document[b('0x2f')](b('0x30'));l['className']='waves-ripple\x20waves-rippling',g[b('0x31')](l);var n=q(g),A=0x0,M=0x0;'touches'in e&&e[b('0x32')]['length']?(A=e[b('0x32')][0x0][b('0x33')]-n[b('0x34')],M=e[b('0x32')][0x0][b('0x35')]-n['left']):(A=e['pageY']-n['top'],M=e[b('0x35')]-n['left']),M=M>=0x0?M:0x0,A=A>=0x0?A:0x0;var Q='scale('+g[b('0x36')]/0x64*0x3+')',a0='translate(0,0)';i&&(a0=b('0x37')+i['x']+b('0x38')+i['y']+'px)'),l['setAttribute'](b('0x19'),Date[b('0x39')]()),l[b('0x1d')](b('0x15'),M),l[b('0x1d')](b('0x16'),A),l[b('0x1d')](b('0x17'),Q),l[b('0x1d')](b('0x18'),a0);var a1={'top':A+'px','left':M+'px'};l[b('0x11')]['add']('waves-notransition'),l[b('0x1d')](b('0x1e'),w(a1)),l['classList'][b('0x12')]('waves-notransition'),a1[b('0x3a')]=Q+'\x20'+a0,a1[b('0x3b')]=Q+'\x20'+a0,a1[b('0x3c')]=Q+'\x20'+a0,a1[b('0x3d')]=Q+'\x20'+a0,a1[b('0x3e')]=Q+'\x20'+a0,a1[b('0x3f')]='1';var a2=b('0x1a')===e[b('0x1b')]?0x9c4:a4[b('0x1c')];a1[b('0x40')]=a2+'ms',a1[b('0x41')]=a2+'ms',a1[b('0x42')]=a2+'ms',a1[b('0x43')]=a2+'ms',l['setAttribute']('style',w(a1));},'hide':function(e,g){for(var i=(g=g||this)[b('0x44')](b('0x13')),l=0x0,n=i[b('0xa')];l<n;l++)A(e,g,i[l]);a3&&(g['removeEventListener'](b('0x45'),a4[b('0x2a')]),g['removeEventListener'](b('0x46'),a4[b('0x2a')])),g[b('0x2b')](b('0x29'),a4['hide']),g[b('0x2b')](b('0x47'),a4[b('0x2a')]);}},a5={'input':function(e){var g=e[b('0x48')];if('i'!==g[b('0x49')]['toLowerCase']()||!g[b('0x11')][b('0x22')](b('0x4a'))){var i=document[b('0x2f')]('i');i[b('0x4b')]=e[b('0x4b')]+'\x20waves-input-wrapper',e[b('0x4b')]=b('0x4c'),g[b('0x4d')](i,e),i['appendChild'](e);var l=window[b('0x4e')](e,null),n=l[b('0x4f')],q=l[b('0x50')];i[b('0x1d')]('style',b('0x51')+n+b('0x52')+q),e[b('0x1d')]('style',b('0x53'));}},'img':function(e){var g=e[b('0x48')];if('i'!==g[b('0x49')][b('0x54')]()||!g['classList'][b('0x22')](b('0x4a'))){var i=document['createElement']('i');g[b('0x4d')](i,e),i[b('0x31')](e);}}},a6={'touches':0x0,'allowEvent':function(e){var g=!0x0;return/^(mousedown|mousemove)$/[b('0x9')](e[b('0x1b')])&&a6[b('0x32')]&&(g=!0x1),g;},'registerEvent':function(e){var g=e['type'];b('0x25')===g?a6[b('0x32')]+=0x1:/^(touchend|touchcancel)$/[b('0x9')](g)&&setTimeout(function(){a6[b('0x32')]&&(a6[b('0x32')]-=0x1);},0x1f4);}};return a0[b('0x55')]=function(e){var g=document[b('0x56')];b('0x1c')in(e=e||{})&&(a4[b('0x1c')]=e[b('0x1c')]),b('0x26')in e&&(a4[b('0x26')]=e[b('0x26')]),a3&&(g[b('0x28')](b('0x25'),Q,!0x1),g[b('0x28')](b('0x46'),a6[b('0x57')],!0x1),g[b('0x28')]('touchend',a6[b('0x57')],!0x1)),g[b('0x28')]('mousedown',Q,!0x1);},a0[b('0x58')]=function(e,g){e=n(e),b('0x59')===a2[b('0x4')](g)&&(g=g['join']('\x20')),g=g?'\x20'+g:'';for(var i,l,q=0x0,w=e[b('0xa')];q<w;q++)l=(i=e[q])[b('0x49')][b('0x54')](),-0x1!==[b('0x5a'),b('0x5b')][b('0x5c')](l)&&(a5[l](i),i=i[b('0x23')]),-0x1===i[b('0x4b')][b('0x5c')]('waves-effect')&&(i[b('0x4b')]+='\x20waves-effect'+g);},a0[b('0x5d')]=function(e,g){var i=(e=n(e))[b('0xa')];if(g=g||{},g[b('0x5e')]=g['wait']||0x0,g[b('0x5f')]=g[b('0x5f')]||null,i)for(var l,w,A,M={},Q=0x0,a0={'type':b('0x60'),'button':0x1};Q<i;Q++)if(l=e[Q],w=g[b('0x5f')]||{'x':l[b('0x36')]/0x2,'y':l[b('0x61')]/0x2},A=q(l),M['x']=A['left']+w['x'],M['y']=A['top']+w['y'],a0[b('0x35')]=M['x'],a0[b('0x33')]=M['y'],a4[b('0x27')](a0,l),g[b('0x5e')]>=0x0&&null!==g[b('0x5e')]){var a1={'type':b('0x29'),'button':0x1};setTimeout(function(e,g){return function(){a4['hide'](e,g);};}(a1,l),g[b('0x5e')]);}},a0[b('0x62')]=function(e){for(var g={'type':'mouseup','button':0x1},i=0x0,l=(e=n(e))[b('0xa')];i<l;i++)a4[b('0x2a')](g,e[i]);},a0['displayEffect']=function(e){a0[b('0x55')](e);},a0;});
+      //# sourceMappingURL=waves.min.js.map
+      })
+    </script>
+    <script type="text/javascript" src="./js/9e3c4f0676ee1b4231502c0258575fef.js"></script>
+    <script type="text/javascript" src="./js/a9f349d682ed92572b44b844101bbc5f.js"></script>
+    <style>
+      .block-before-avatar-load {
+        display: -webkit-box;
+        height: 0;
+        transition: .25s;
+      }
+      .block-before-avatar-load.active {
+        height: 35px;
+        margin-top: 10px;
+      }
+      .block-before-avatar-load .avatar-load:nth-child(2) {
+        margin-left: 30px;
+      }
+      #count-of-avatars {
+        text-align: left;
+        margin-left: 0 !important;
+      }
+      #count-of-numbers {
+        font-weight: 300;
+        margin-left: 15px;
+        font-size: 18px;
+        line-height: 2;
+        transition: .25s;
+        pointer-events: none;
+        opacity: 0;
+      }
+      #count-of-numbers.active {
+        opacity: .7;
+        pointer-events: auto;
+      }
+      #count-of-numbers b {
+        font-weight: 300;
+      }
+      #sms-balance {
+        font-weight: 300;
+        margin-left: 15px;
+        font-size: 18px;
+        line-height: 2;
+        transition: .25s;
+        pointer-events: none;
+        opacity: 0;
+      }
+      #sms-balance.active {
+        opacity: .7;
+        pointer-events: auto;
+      }
+      #sms-balance b {
+        font-weight: 300;
+      }
+      #price-number {
+        font-weight: 300;
+        margin-left: 15px;
+        font-size: 18px;
+        line-height: 2;
+        transition: .25s;
+        pointer-events: none;
+        opacity: 0;
+      }
+      #price-number.active {
+        opacity: .7;
+        pointer-events: auto;
+      }
+      #price-number b {
+        font-weight: 300;
+      }
+      #enough-block {
+        transition: .25s;
+      }
+      #enough-block.active {
+        margin:0;
+      }
+      #enough-block span {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 2;
+        transition: .25s;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #enough-block.active span {
+        opacity: .8;
+        pointer-events: auto;
+      }
+      #enable_verify_email {
+        transition: .25s;
+        display: block;
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #enable_verify_email.active {
+        margin-top: 10px;
+        opacity: 1;
+        /* height: 75px; */
+        height: 25px;
+        pointer-events: auto;
+      }
+      #invite_for_accs {
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: .25s;
+      }
+      #invite_for_accs.active {
+        height: 35px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      #limit_for_accs {
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: .25s;
+      }
+      #limit_for_accs.active {
+        height: 35px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .noty_bar .noty_body a {
+        color: #fff;
+        text-decoration: underline;
+        transition: .15s;
+      }
+      .noty_bar .noty_body a:hover {
+        opacity: .7;
+      }
+      #all-count-regs {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        transition: .25s;
+        opacity: 0;
+        height: 0;
+        margin: 0;
+        pointer-events: none;
+      }
+      #all-count-regs.active {
+        height: 25px;
+        pointer-events: auto;
+        margin: 5px 0;
+        opacity: .6;
+      }
+      #reg-speed-accs {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        opacity: 0;
+        height: 0;
+        pointer-events: none;
+        margin:0;
+      }
+      #reg-speed-accs.active {
+        height: 25px;
+        pointer-events: auto;
+        opacity: .7;
+        margin: 5px 0 15px 0;
+      }
+      #block-select-proxy-type .laber {
+        display: -webkit-box;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      #block-select-proxy-type {
+        height: 85px
+      }
+      #count-of-proxy-regs.active {
+        margin-top: -30px;
+        margin-bottom: 0px;
+      }
+      #block-select-proxy-type .laber,
+      #block-select-proxy-type .nice-select,
+      #block-select-proxy-type {
+        transition: .25s;
+      }
+      #proxy-load.hider:not(.active) #block-select-proxy-type .laber {
+        transition-delay: 300ms;
+        height: 0;
+        margin: 0;
+      }
+      #proxy-load.hider:not(.active) #block-select-proxy-type .nice-select {
+        transition-delay: 300ms;
+        height: 0;
+        margin: 0;
+        padding: 0;
+      }
+      #proxy-load.hider:not(.active) #block-select-proxy-type {
+        margin-top: -80px;
+        height: 0;
+      }
+      #get-onedash-proxys {
+        display: block;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        font-size: 16px;
+        font-weight: 500;
+        opacity: .7;
+        cursor: pointer;
+        width: 170px;
+        text-align: center;
+        border-radius: 5px;
+        padding: 2px 5px !important;
+        height: 26px;
+        transition: .25s;
+      }
+      #proxy-load.hider:not(.active) #get-onedash-proxys {
+        padding: 0 !important;
+        margin: 0;
+        height: 0;
+      }
+      #get-onedash-proxys:hover {
+        opacity: .8;
+      }
+      .nice-select .option.disabled {color: #9999997d;}
+      #check-proxys {
+        display: -webkit-inline-box;
+        font-size: 16px;
+        font-weight: 500;
+        top: calc(-39px + -1px);
+        opacity: .7;
+        left: 190px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 5px;
+        padding: 2px 15px !important;
+        height: 26px;
+        transition: .25s;
+      }
+      #proxy-load.hider:not(.active) #check-proxys {
+        padding: 0 !important;
+        margin: 0;
+        height: 0;
+      }
+      #check-proxys:hover {
+        opacity: .8;
+      }
+      #avatar-load-load {
+        margin-top: 0;
+      }
+      body.darwin .block-logs .log .log-data {font-family: 'Yanone Kaffeesatz', sans-serif !important;}
+      body.darwin .block-logs .log .time {font-family: 'Yanone Kaffeesatz', sans-serif !important;}
+      @media (max-width: 488px) {
+        #enough-block.active {
+          margin-top: -10px;
+        }
+      }
+      .reference-block {
+        font-size: 18px;
+        font-weight: 300;
+        user-select: text;
+        line-height: 1.3;
+        max-height: 1000px;
+        overflow: auto;
+        text-align: center;
+      }
+      .reference-block span {
+        font-weight: 500;
+        user-select: text;
+      }
+      .reference-block p,
+      .reference-block w {
+        user-select: text;
+      }
+      #switch_lang,#open-reference,#delete-update{transition: .45s;cursor: pointer;}#switch_lang:hover,#open-reference:hover,#delete-update:hover {color: orange;}
+      #block-save_only_tokens {
+        transition: .25s;
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        pointer-events: none;
+        margin-top: -20px;
+      }
+      #block-save_only_tokens.active {
+        height: 30px;
+        opacity: 1;
+        pointer-events: auto;
+        margin: 20px 0;
+      }
+      #delete_used_usernames_block {
+        transition: 0.25s;
+        height: 0;
+        pointer-events: none;
+        opacity: 0;
+        margin: 0;
+      }
+      #delete_used_usernames_block.active {
+        height: 30px;
+        margin-top: 10px;
+        pointer-events: auto;
+        opacity: 1;
+      }
+    </style>
+    <div id="modal-reference" class="modal fade scrol-web" role="dialog">
+
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal"></button>
+            <h4 class="modal-title" translate="Reference">Справка</h4>
+          </div>
+          <div class="modal-body">
+            <div class="reference-block scrol-web">
+              <span translate="Error codes:">Коды ошибок:</span><br>
+              <p>
+                <w translate="974, 479 - error connecting to anti-captcha.com server">974, 479 - ошибка при подключении к серверу anti-captcha.com</w><br>
+                <w translate="wrong_key, apikey - wrong apikey">wrong_key, apikey - неверный apikey</w><br>
+                <w translate="balance - insufficient funds in the account">balance - недостаточно средств на счету</w><br>
+                <w translate="dont_res - captcha solved incorrectly">dont_res - капча решена неверно</w><br>
+                <w translate="cap_monster_url - invalid IP Cap Monster / Xevil specified">cap_monster_url - указан неверный IP Cap Monster/Xevil</w><br>
+                <w translate="wait - temporary account blocking on SMS service">wait - временная блокировка аккаунта на смс сервисе</w><br>
+                <w translate="no_num - SMS numbers have run out on SMS service">no_num - на смс сервисе закончились номера</w><br>
+                <w translate="cancel - SMS operation canceled">cancel - смс операция отменена</w><br>
+                <w translate="4989, 1, proxy, dont_body - non-working proxies, change / install proxies">4989, 1, proxy, dont_body - нерабочие прокси, смените/установите прокси</w><br>
+                <w translate="1901 - error receiving number">1901 - ошибка при получении номера</w><br>
+                <w translate="235 - error while generating token, change proxy">235 - ошибка при генерации токена, смените прокси</w><br>
+                <w translate="email, wrong_email - invalid email, or busy">email, wrong_email - неверный email, либо он занят</w><br>
+                <w translate="username - invalid username, or unavailable for registration">username - неверный username, либо недоступен для регистрации</w><br>
+                <w translate="check_cap - captcha has not been resolved">check_cap - капча не была решана</w><br>
+                <w translate="2720 - current IP is blocked in Discord">2720 - текущий IP заблокирован в Discord</w><br>
+                <w translate="limit - on the current IP there are restrictions for registration in Discord">limit - на текущем IP действуют ограничения для регистрации в Discord</w><br>
+                <w translate="not_token - error during registration - captcha resolved incorrectly or non-working proxy">not_token - ошибка при регистрации - капча решена неверно или нерабочий прокси</w><br>
+                <w translate="9382, 45 - error when inviting (account requires verification)">9382, 45 - ошибка при инвайтинге (аккаунт требует верификации)</w><br>
+                <w translate="7834 - error during mail verification - captcha solved incorrectly or inactive proxy">7834 - ошибка при верификации почты - капча решена неверно или нерабочий прокси</w><br>
+                <w translate="924 - error loading avatar">924 - ошибка при загрузке аватара</w><br>
+                <w translate="5669, 4521, 9741, 4579 - an error occurred while getting the number">5669, 4521, 9741, 4579 - ошибка при получении номера</w><br>
+                <w translate="3247 - error while receiving temporary mail for verification">3247 - ошибка при получении временной почты для верификации</w><br>
+                <w translate="778, 6327 - captcha for mail verification is not solved, or it is solved incorrectly">778, 6327 - капча для верификации почты не решана, либо решена неверно</w>
+              </p>
+              <span translate='Limits'>Лимиты:</span><br>
+              <p>
+                <w translate='User spam:'>Спам по пользователям:</w><br>
+                <w translate='Ukrainian number - 7-10 messages'>Украинский номер - 7-10 сообщений</w><br>
+                <w translate='Latvian, Finnish, Swiss, Estonian, Lithuanian, Polish, Kyrgyz, Romanian number - 25-30 messages'>Латвийский, Финляндский, Швейцарский, Эстонский, Литвийски, Польский, Кыргызстанский, Румынский номер - 25-30 сообщений</w><br>
+                <w translate='Kazakh number - 4-8 messages'>Казахский номер - 4-8 сообщений</w><br>
+                <w translate='Russian number - 1-3 messages'>Русский номер - 1-3 сообщения</w><br>
+                <w translate='Spam with invite in the text:'>Спам с инвайтом в тексте:</w><br>
+                <w translate='Ukrainian number - 2 messages'>Украинский номер - 2 сообщения</w><br>
+                <w translate='Latvian, Finnish, Swiss, Estonian, Lithuanian, Polish, Kyrgyz, Romanian number - 13-20 messages'>Латвийский, Финляндский, Швейцарский, Эстонский, Литвийски, Польский, Кыргызстанский, Румынский номер - 13-20 сообщений</w><br>
+                <w translate='Kazakh number - 3-4 messages'>Казахский номер - 3-4 сообщения</w><br>
+                <w translate='Russian number - 1-2 messages'>Русский номер - 1-2 сообщения</w><br>
+                <w translate='Server spam: no more than 5 messages per second'>Спам по серверам: не более 5 сообщений в секунду</w><br>
+                <w translate='Inviting: no more than 100 servers per day'>Инвайтинг: не более 100 серверов в сутки</w><br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    !function(e){var t="object"==typeof exports&&exports,n="object"==typeof module&&module&&module.exports==t&&module,o="object"==typeof global&&global;o.global!==o&&o.window!==o||(e=o);function p(e){return e.replace(/\x20$/,"=20").replace(/\t$/,"=09")}var r=String.fromCharCode,u=/<%= unsafeSymbols %>/g,i={encode:function(e){for(var t=e.replace(u,function(e){if("ÿ"<e)throw RangeError("`quotedPrintable.encode()` expects extended ASCII input only. Don’t forget to encode the input first using a character encoding like UTF-8.");return"="+("0"+e.charCodeAt(0).toString(16).toUpperCase()).slice(-2)}),n=t.split(/\r\n?|\n/g),o=-1,r=n.length,i=[];++o<r;)for(var l=75,c=0,a=n[o].length;c<a;){var s=t.slice(c,c+l);/=$/.test(s)?(s=s.slice(0,l-1),c+=l-1):/=[A-F0-9]$/.test(s)?(s=s.slice(0,l-2),c+=l-2):c+=l,i.push(s)}var f=s.length;return/[\t\x20]$/.test(s)&&(i.pop(),f+2<=l+1?i.push(p(s)):i.push(s.slice(0,f-1),p(s.slice(f-1,f)))),i.join("=\r\n")},decode:function(e){return e.replace(/[\t\x20]$/gm,"").replace(/=(?:\r\n?|\n|$)/g,"").replace(/=([a-fA-F0-9]{2})/g,function(e,t){var n=parseInt(t,16);return r(n)})},version:"<%= version %>"};if("function"==typeof define&&"object"==typeof define.amd&&define.amd)define(function(){return i});else if(t&&!t.nodeType)if(n)n.exports=i;else for(var l in i)i.hasOwnProperty(l)&&(t[l]=i[l]);else e.quotedPrintable=i}(this);</script>
+  </body>
+</html>
